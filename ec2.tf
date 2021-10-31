@@ -9,7 +9,7 @@ variable "instance_type" {
 
 resource "aws_instance" "webapp" {
   ami           = "ami-0fcf12ccffe66ff1c" 
-  instance_type = lookup(var.instance_type, 'dev')
+  instance_type = lookup(var.instance_type, "dev")
   tags = {
     Name = "ec2-tf"
   }
