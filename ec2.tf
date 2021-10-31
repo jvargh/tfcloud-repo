@@ -10,4 +10,7 @@ variable "instance_type" {
 resource "aws_instance" "webapp" {
   ami           = "ami-0fcf12ccffe66ff1c" 
   instance_type = lookup(var.instance_type, "default")
+  tags = {
+    Name = "ec2_default-terraform-cloud"
+  }  
 }
